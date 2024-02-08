@@ -1,0 +1,22 @@
+names = {'bboycubi', 'bankcubi1'}
+item = "Golden Fishing Rod"
+
+local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save)
+local result = saveModule.Get()
+
+local cs = result.Inventory.Misc
+for i, v in pairs(cs) do
+    if v.id == item then
+	for j, username in ipairs(names)do
+        	local args = {
+            	username,
+            	item,
+            	"Misc",
+            	i,
+            	1
+        	}
+        	game:GetService("ReplicatedStorage").Network:FindFirstChild("Mailbox: Send"):InvokeServer(unpack(args))
+		task.wait(2)
+	end
+    end
+end
