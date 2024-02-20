@@ -1,5 +1,4 @@
-names = {'bboycubi', 'bankcubi1'}
-item = "Golden Fishing Rod"
+item = "Diamond Shovel"
 
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save)
 local result = saveModule.Get()
